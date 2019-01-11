@@ -13,6 +13,10 @@ class LoginController extends Controller
 
         $http = new \GuzzleHttp\Client;
 
+        dd(config('services.passport.client_id'));
+        dd(config('services.passport.login_endpoint'));
+        dd(config('services.passport.client_secret'));
+
         try {
             $response = $http->post(config('services.passport.login_endpoint'), [
                 'form_params' => [
